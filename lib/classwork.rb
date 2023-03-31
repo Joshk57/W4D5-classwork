@@ -30,3 +30,20 @@ end
 def my_transpose(array)
     array.transpose
 end
+
+arr=[3, 15, 1 , 22, -28, 32, 3]
+largest_range = 0
+new_arr = []
+ arr.each_with_index do |num1, idx1|
+    arr.each_with_index do |num2, idx2|
+        if idx2 > idx1 
+            curr_range = 0
+            curr_range = num2 + num1
+            if curr_range > largest_range
+                largest_range = curr_range
+                new_arr << [num1, num2]
+            end
+        end
+    end
+    new_arr[-1]
+end
